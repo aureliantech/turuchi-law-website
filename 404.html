@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found — The Turuchi Law Firm | New Jersey</title>
+  <meta name="description" content="This page wandered off. Find what you're looking for, or call The Turuchi Law Firm directly at 732-210-6410.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/notfound.css">
+
+  <style>
+    /* ═══════════════════════════════════════════════════════════
+       NAV — primary navigation with mega menu
+       Overrides the basic .lp-header from css/styles.css
+       Mobile-first: hamburger → full-screen drawer; desktop adds
+       the mega menu panel that drops from the bar.
+       ═══════════════════════════════════════════════════════════ */
+
+    /* Hide the legacy .lp-header on pages where the new nav is present */
+    .nav ~ .lp-header,
+    .nav + .lp-header { display: none; }
+
+    .nav {
+      position: relative;
+      background: var(--ink);
+      color: var(--paper);
+      z-index: 200;
+      font-family: 'Inter Tight', sans-serif;
+    }
+    .nav-inner {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      position: relative;
+    }
+    @media (min-width: 900px) {
+      .nav-inner {
+        padding: 18px 32px;
+        gap: 32px;
+      }
+    }
+
+    /* Brand — stacked logotype + small-caps tag */
+    .nav-brand {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-decoration: none;
+      color: var(--paper);
+      gap: 2px;
+      line-height: 1;
+    }
+    .nav-brand-name {
+      font-family: 'Fraunces', serif;
+      font-weight: 400;
+      font-style: italic;
+      font-size: clamp(20px, 2.4vw, 26px);
+      letter-spacing: -0.01em;
+      color: var(--paper);
+    }
+    .nav-brand-tag {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 9.5px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(243,239,230,0.55);
+      font-weight: 600;
+    }
+    @media (min-width: 900px) {
+      .nav-brand-tag { font-size: 10.5px; }
+    }
+
+    /* Center nav (desktop only) */
+    .nav-center {
+      display: none;
+    }
+    @media (min-width: 900px) {
+      .nav-center {
+        display: flex;
+        align-items: center;
+        gap: 36px;
+      }
+    }
+    .nav-item {
+      position: relative;
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 14.5px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: var(--paper);
+      text-decoration: none;
+      background: none;
+      border: 0;
+      padding: 8px 0;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 280ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .nav-item:hover,
+    .nav-item:focus-visible,
+    .nav-item[aria-expanded="true"] {
+      color: #e8b894;
+      outline: none;
+    }
+    .nav-item-chevron {
+      width: 10px;
+      height: 10px;
+      transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .nav-item[aria-expanded="true"] .nav-item-chevron {
+      transform: rotate(180deg);
+    }
+    /* Tiny dot indicator under the active item */
+    .nav-item[aria-expanded="true"]::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: -10px;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: #e8b894;
+    }
+
+    /* Right CTA */
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      color: var(--paper);
+      text-decoration: none;
+      padding: 11px 18px;
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition:
+        transform 360ms cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 360ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    @media (min-width: 900px) {
+      .nav-cta { padding: 13px 22px; font-size: 13.5px; }
+    }
+    .nav-cta:hover {
+      transform: translateY(-2px);
+      box-shadow:
+        0 10px 24px -8px rgba(42, 77, 110, 0.55),
+        0 4px 12px -6px rgba(42, 77, 110, 0.35);
+    }
+    .nav-cta-phone {
+      display: none;
+    }
+    @media (min-width: 600px) {
+      .nav-cta-phone {
+        display: inline;
+        font-family: 'Fraunces', serif;
+        font-style: italic;
+        font-weight: 400;
+        font-size: 15px;
+        letter-spacing: 0;
+        text-transform: none;
+        margin-left: 2px;
+      }
+    }
+
+    /* Hamburger toggle (mobile only) */
+    .nav-toggle {
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 4px;
+      width: 44px;
+      height: 44px;
+      background: none;
+      border: 0;
+      cursor: pointer;
+      margin-left: 4px;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--paper);
+      transition: transform 360ms cubic-bezier(0.22, 1, 0.36, 1), opacity 280ms;
+    }
+    .nav-toggle[aria-expanded="true"] span:nth-child(1) {
+      transform: translateY(5.5px) rotate(45deg);
+    }
+    .nav-toggle[aria-expanded="true"] span:nth-child(2) {
+      opacity: 0;
+    }
+    .nav-toggle[aria-expanded="true"] span:nth-child(3) {
+      transform: translateY(-5.5px) rotate(-45deg);
+    }
+    @media (min-width: 900px) {
+      .nav-toggle { display: none; }
+    }
+
+    /* ─── MEGA MENU PANEL (desktop) ──────────────────────────── */
+    .nav-mega {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--ink);
+      color: var(--paper);
+      border-top: 1px solid rgba(243,239,230,0.08);
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition:
+        max-height 480ms cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 320ms cubic-bezier(0.22, 1, 0.36, 1),
+        visibility 0s linear 480ms;
+      z-index: 199;
+    }
+    .nav-mega[data-open="true"] {
+      max-height: 720px;
+      opacity: 1;
+      visibility: visible;
+      transition:
+        max-height 480ms cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 320ms cubic-bezier(0.22, 1, 0.36, 1),
+        visibility 0s linear 0s;
+    }
+    @media (max-width: 899px) {
+      .nav-mega { display: none; }
+    }
+    .nav-mega-inner {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      max-width: 1440px;
+      margin: 0 auto;
+      min-height: 480px;
+    }
+    @media (min-width: 1200px) {
+      .nav-mega-inner { grid-template-columns: 1fr 1.25fr; }
+    }
+
+    /* Left half — featured editorial moment */
+    .nav-mega-feature {
+      position: relative;
+      padding: 56px 48px 48px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: 18px;
+      color: var(--paper);
+      min-height: 480px;
+    }
+    .nav-mega-feature-img {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+    .nav-mega-feature-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      filter: contrast(1.05) saturate(0.85) brightness(0.72);
+    }
+    .nav-mega-feature-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(22,25,31,0.35) 0%, rgba(22,25,31,0.65) 70%, rgba(22,25,31,0.88) 100%),
+        linear-gradient(90deg, rgba(22,25,31,0.30) 0%, rgba(22,25,31,0.05) 50%);
+    }
+    .nav-mega-feature > *:not(.nav-mega-feature-img) {
+      position: relative;
+      z-index: 2;
+    }
+    .nav-mega-feature-eyebrow {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 10.5px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: #e8b894;
+      font-weight: 600;
+    }
+    .nav-mega-feature-headline {
+      font-family: 'Fraunces', serif;
+      font-weight: 300;
+      font-size: clamp(40px, 4.4vw, 60px);
+      line-height: 0.98;
+      letter-spacing: -0.025em;
+      color: var(--paper);
+      margin: 0;
+      max-width: 12ch;
+    }
+    .nav-mega-feature-headline em {
+      font-style: italic;
+      font-weight: 400;
+      color: #e8b894;
+    }
+    .nav-mega-feature-sub {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 14.5px;
+      line-height: 1.5;
+      color: rgba(243,239,230,0.78);
+      margin: 0;
+      max-width: 36ch;
+    }
+    .nav-mega-feature-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      align-self: flex-start;
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--paper);
+      text-decoration: none;
+      padding: 13px 22px;
+      border: 1px solid rgba(243,239,230,0.4);
+      transition: background 280ms cubic-bezier(0.22, 1, 0.36, 1),
+                  border-color 280ms cubic-bezier(0.22, 1, 0.36, 1),
+                  color 280ms cubic-bezier(0.22, 1, 0.36, 1);
+      margin-top: 6px;
+    }
+    .nav-mega-feature-cta:hover {
+      background: #e8b894;
+      border-color: #e8b894;
+      color: var(--ink);
+    }
+
+    /* Right half — practice area grid */
+    .nav-mega-grid-wrap {
+      padding: 56px 48px 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+    .nav-mega-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px 40px;
+    }
+    .nav-mega-entry {
+      display: flex;
+      gap: 16px;
+      text-decoration: none;
+      color: var(--paper);
+      padding: 14px 14px 14px 4px;
+      transition: background 240ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .nav-mega-entry:hover {
+      background: rgba(243,239,230,0.04);
+    }
+    .nav-mega-entry-num {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 22px;
+      color: rgba(243,239,230,0.55);
+      letter-spacing: -0.01em;
+      flex-shrink: 0;
+      line-height: 1.3;
+    }
+    .nav-mega-entry:hover .nav-mega-entry-num {
+      color: #e8b894;
+    }
+    .nav-mega-entry-text {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .nav-mega-entry-title {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--paper);
+      letter-spacing: -0.005em;
+    }
+    .nav-mega-entry-sub {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 13.5px;
+      color: rgba(243,239,230,0.6);
+      line-height: 1.45;
+    }
+
+    /* Highlighted footer row */
+    .nav-mega-footer {
+      margin-top: 4px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(243,239,230,0.12);
+    }
+    .nav-mega-footer a {
+      display: flex;
+      gap: 16px;
+      text-decoration: none;
+      color: #e8b894;
+      padding: 10px 14px 10px 4px;
+      transition: background 240ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .nav-mega-footer a:hover {
+      background: rgba(232, 184, 148, 0.06);
+    }
+    .nav-mega-footer-mark {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-size: 20px;
+      flex-shrink: 0;
+      line-height: 1.3;
+    }
+    .nav-mega-footer-text {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .nav-mega-footer-title {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: #e8b894;
+    }
+    .nav-mega-footer-sub {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 13px;
+      color: rgba(243,239,230,0.6);
+    }
+
+    /* ─── MOBILE DRAWER ────────────────────────────────────── */
+    .nav-drawer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--ink);
+      color: var(--paper);
+      z-index: 300;
+      transform: translateX(100%);
+      transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+    }
+    .nav-drawer[data-open="true"] {
+      transform: translateX(0);
+    }
+    @media (min-width: 900px) {
+      .nav-drawer { display: none; }
+    }
+    .nav-drawer-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+      border-bottom: 1px solid rgba(243,239,230,0.08);
+    }
+    .nav-drawer-close {
+      background: none;
+      border: 0;
+      color: var(--paper);
+      cursor: pointer;
+      width: 44px;
+      height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .nav-drawer-body {
+      flex: 1;
+      padding: 24px 20px 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .nav-drawer-section-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      background: none;
+      border: 0;
+      padding: 18px 0;
+      font-family: 'Fraunces', serif;
+      font-weight: 300;
+      font-size: 28px;
+      letter-spacing: -0.02em;
+      color: var(--paper);
+      border-bottom: 1px solid rgba(243,239,230,0.10);
+      cursor: pointer;
+      text-align: left;
+    }
+    .nav-drawer-section-toggle .nav-item-chevron {
+      width: 14px;
+      height: 14px;
+    }
+    .nav-drawer-section-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 360ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .nav-drawer-section[data-open="true"] .nav-drawer-section-content {
+      max-height: 700px;
+    }
+    .nav-drawer-section[data-open="true"] .nav-item-chevron {
+      transform: rotate(180deg);
+    }
+    .nav-drawer-section-content-inner {
+      padding: 12px 0 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .nav-drawer-link {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 14px 0;
+      text-decoration: none;
+      color: var(--paper);
+      border-bottom: 1px solid rgba(243,239,230,0.06);
+    }
+    .nav-drawer-link:last-child { border-bottom: 0; }
+    .nav-drawer-link-title {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 17px;
+      font-weight: 600;
+    }
+    .nav-drawer-link-sub {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 13px;
+      color: rgba(243,239,230,0.6);
+    }
+    .nav-drawer-link--accent {
+      color: #e8b894;
+    }
+    .nav-drawer-link--accent .nav-drawer-link-title { color: #e8b894; }
+
+    /* Direct (non-mega) drawer links */
+    .nav-drawer-direct {
+      display: block;
+      padding: 18px 0;
+      font-family: 'Fraunces', serif;
+      font-weight: 300;
+      font-size: 28px;
+      letter-spacing: -0.02em;
+      color: var(--paper);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(243,239,230,0.10);
+    }
+
+    /* Drawer footer — CTA */
+    .nav-drawer-foot {
+      padding: 24px 20px 40px;
+      border-top: 1px solid rgba(243,239,230,0.08);
+    }
+    .nav-drawer-foot-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: var(--accent);
+      color: var(--paper);
+      text-decoration: none;
+      padding: 18px 24px;
+      font-family: 'Inter Tight', sans-serif;
+      font-weight: 600;
+      font-size: 14.5px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      width: 100%;
+    }
+    .nav-drawer-foot-cta-num {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 18px;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    /* Body lock when drawer/mega is open */
+    body.nav-open { overflow: hidden; }
+
+    /* Backdrop for mega menu (desktop) — dim the rest of the page */
+    .nav-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(22, 25, 31, 0.35);
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 320ms cubic-bezier(0.22, 1, 0.36, 1), visibility 0s linear 320ms;
+      z-index: 198;
+    }
+    .nav-backdrop[data-open="true"] {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 320ms cubic-bezier(0.22, 1, 0.36, 1), visibility 0s linear 0s;
+    }
+    @media (max-width: 899px) {
+      .nav-backdrop { display: none; }
+    }
+
+  </style>
+  <!-- ═══ SEO META ═══ -->
+  <link rel="canonical" href="https://turuchilaw.com/404">
+  <meta name="robots" content="noindex, nofollow">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://turuchilaw.com/404">
+  <meta property="og:title" content="Page Not Found — The Turuchi Law Firm">
+  <meta property="og:description" content="This page wandered off. Find what you're looking for, or call The Turuchi Law Firm directly at 732-210-6410.">
+  <meta property="og:image" content="https://turuchilaw.com/share-images/share-404.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="The Turuchi Law Firm">
+  <meta property="og:locale" content="en_US">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://turuchilaw.com/404">
+  <meta name="twitter:title" content="Page Not Found — The Turuchi Law Firm">
+  <meta name="twitter:description" content="This page wandered off. Find what you're looking for, or call The Turuchi Law Firm directly at 732-210-6410.">
+  <meta name="twitter:image" content="https://turuchilaw.com/share-images/share-404.png">
+  
+  <!-- Favicons + theme color -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#16191f">
+  <!-- ═══ /SEO META ═══ -->
+</head>
+<body class="nf-body">
+
+<!-- ════════════════ NAV ════════════════ -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">
+      <span class="nav-brand-name">THE TURUCHI LAW FIRM, LLC</span>
+      <span class="nav-brand-tag">NJ · Personal Injury · Tickets and DUI · Workers' Comp</span>
+    </a>
+
+    <nav class="nav-center" aria-label="Primary">
+      <button class="nav-item" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="nav-mega-practice" data-nav-trigger="practice">
+        Practice Areas
+        <svg class="nav-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <a class="nav-item" href="/reviews">Reviews</a>
+      <a class="nav-item" href="/contact">Contact</a>
+    </nav>
+
+    <a href="tel:7322106410" class="nav-cta">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <span>Call</span>
+      <span class="nav-cta-phone">732 · 210 · 6410</span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-drawer" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <!-- Mega menu: Practice Areas -->
+  <div class="nav-mega" id="nav-mega-practice" data-mega="practice" aria-hidden="true">
+    <div class="nav-mega-inner">
+
+      <!-- Left: featured editorial moment -->
+      <div class="nav-mega-feature">
+        <div class="nav-mega-feature-img">
+          <img src="public/images/turuchi-editorial.webp" alt="" loading="lazy">
+        </div>
+        <div class="nav-mega-feature-eyebrow">Practice Areas</div>
+        <h2 class="nav-mega-feature-headline">A boutique firm. <em>Built around your case.</em></h2>
+        <p class="nav-mega-feature-sub">We take a small number of cases and work them like a craft — across personal injury, traffic and DUI, immigration, and workers' comp.</p>
+        <a href="tel:7322106410" class="nav-mega-feature-cta">
+          Call 732 · 210 · 6410
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+
+      <!-- Right: 2x2 practice grid + accent footer row -->
+      <div class="nav-mega-grid-wrap">
+        <div class="nav-mega-grid">
+          <a href="/personal-injury" class="nav-mega-entry">
+            <span class="nav-mega-entry-num">01</span>
+            <span class="nav-mega-entry-text">
+              <span class="nav-mega-entry-title">Personal Injury</span>
+              <span class="nav-mega-entry-sub">Car, truck, slip &amp; fall, wrongful death</span>
+            </span>
+          </a>
+          <a href="/traffic-dui" class="nav-mega-entry">
+            <span class="nav-mega-entry-num">02</span>
+            <span class="nav-mega-entry-text">
+              <span class="nav-mega-entry-title">Traffic &amp; DUI</span>
+              <span class="nav-mega-entry-sub">Tickets, DUI, license issues</span>
+            </span>
+          </a>
+          <a href="/immigration" class="nav-mega-entry">
+            <span class="nav-mega-entry-num">03</span>
+            <span class="nav-mega-entry-text">
+              <span class="nav-mega-entry-title">Immigration</span>
+              <span class="nav-mega-entry-sub">Family, citizenship, removal, asylum</span>
+            </span>
+          </a>
+          <a href="/workers-comp" class="nav-mega-entry">
+            <span class="nav-mega-entry-num">04</span>
+            <span class="nav-mega-entry-text">
+              <span class="nav-mega-entry-title">Workers' Comp</span>
+              <span class="nav-mega-entry-sub">Hurt at work — you have rights</span>
+            </span>
+          </a>
+        </div>
+
+        <div class="nav-mega-footer">
+          <a href="tel:7322106410">
+            <span class="nav-mega-footer-mark">→</span>
+            <span class="nav-mega-footer-text">
+              <span class="nav-mega-footer-title">Not sure which fits?</span>
+              <span class="nav-mega-footer-sub">Call us. We'll tell you in two minutes.</span>
+            </span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+<!-- Backdrop (desktop mega menu) -->
+<div class="nav-backdrop" aria-hidden="true"></div>
+
+<!-- Mobile drawer -->
+<aside class="nav-drawer" id="nav-drawer" aria-hidden="true">
+  <div class="nav-drawer-head">
+    <a href="/" class="nav-brand">
+      <span class="nav-brand-name">THE TURUCHI LAW FIRM, LLC</span>
+      <span class="nav-brand-tag">NJ · Boutique Firm</span>
+    </a>
+    <button class="nav-drawer-close" type="button" aria-label="Close menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+
+  <div class="nav-drawer-body">
+    <div class="nav-drawer-section" data-drawer-section>
+      <button class="nav-drawer-section-toggle" type="button" aria-expanded="false">
+        Practice Areas
+        <svg class="nav-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="nav-drawer-section-content">
+        <div class="nav-drawer-section-content-inner">
+          <a href="/personal-injury" class="nav-drawer-link">
+            <span class="nav-drawer-link-title">Personal Injury</span>
+            <span class="nav-drawer-link-sub">Car, truck, slip &amp; fall, wrongful death</span>
+          </a>
+          <a href="/traffic-dui" class="nav-drawer-link">
+            <span class="nav-drawer-link-title">Traffic &amp; DUI</span>
+            <span class="nav-drawer-link-sub">Tickets, DUI, license issues</span>
+          </a>
+          <a href="/immigration" class="nav-drawer-link">
+            <span class="nav-drawer-link-title">Immigration</span>
+            <span class="nav-drawer-link-sub">Family, citizenship, removal, asylum</span>
+          </a>
+          <a href="/workers-comp" class="nav-drawer-link">
+            <span class="nav-drawer-link-title">Workers' Comp</span>
+            <span class="nav-drawer-link-sub">Hurt at work — you have rights</span>
+          </a>
+          <a href="tel:7322106410" class="nav-drawer-link nav-drawer-link--accent">
+            <span class="nav-drawer-link-title">Not sure which fits? Call →</span>
+            <span class="nav-drawer-link-sub">We'll tell you in two minutes</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <a href="/reviews" class="nav-drawer-direct">Reviews</a>
+    <a href="/contact" class="nav-drawer-direct">Contact</a>
+  </div>
+
+  <div class="nav-drawer-foot">
+    <a href="tel:7322106410" class="nav-drawer-foot-cta">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Call
+      <span class="nav-drawer-foot-cta-num">732 · 210 · 6410</span>
+    </a>
+  </div>
+</aside>
+<!-- ════════════════ /NAV ════════════════ -->
+
+<!-- 404 STAGE -->
+<main class="nf-stage">
+  <div class="nf-inner">
+
+    <!-- Big editorial 404 mark -->
+    <div class="nf-mark" aria-hidden="true">
+      <span class="nf-mark-digit">4</span>
+      <span class="nf-mark-digit nf-mark-digit--mid">0</span>
+      <span class="nf-mark-digit">4</span>
+    </div>
+
+    <div class="nf-meta">
+      <span class="nf-meta-line"></span>
+      <span class="nf-meta-text">Error · The page you requested could not be found</span>
+    </div>
+
+    <h1 class="nf-headline">
+      That page doesn't exist <em>anymore.</em>
+    </h1>
+
+    <p class="nf-lede">
+      A broken link, a stale search result, or a typo in the URL — whatever brought you here, the page itself is gone. Try one of the routes below, or pick up the phone.
+    </p>
+
+    <!-- Primary recovery -->
+    <div class="nf-primary">
+      <a href="tel:7322106410" class="nf-cta-btn">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call 732-210-6410
+      </a>
+      <a href="/" class="nf-cta-secondary">
+        Back to homepage
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+
+    <!-- Suggested destinations -->
+    <div class="nf-routes">
+      <div class="nf-routes-label">— Or, you may have been looking for</div>
+      <ul class="nf-routes-list">
+        <li>
+          <a href="/personal-injury.html">
+            <span class="nf-route-num">01</span>
+            <span class="nf-route-name">Personal Injury</span>
+            <span class="nf-route-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+        <li>
+          <a href="/workers-comp.html">
+            <span class="nf-route-num">02</span>
+            <span class="nf-route-name">Workers' Compensation</span>
+            <span class="nf-route-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+        <li>
+          <a href="/traffic-dui.html">
+            <span class="nf-route-num">03</span>
+            <span class="nf-route-name">Traffic &amp; DUI</span>
+            <span class="nf-route-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+        <li>
+          <a href="/immigration.html">
+            <span class="nf-route-num">04</span>
+            <span class="nf-route-name">Immigration</span>
+            <span class="nf-route-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+        <li>
+          <a href="/about.html">
+            <span class="nf-route-num">05</span>
+            <span class="nf-route-name">About the founder</span>
+            <span class="nf-route-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+        <li>
+          <a href="/contact.html">
+            <span class="nf-route-num">06</span>
+            <span class="nf-route-name">Contact &amp; offices</span>
+            <span class="nf-route-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</main>
+
+<!-- SLIM FOOTER -->
+<footer class="nf-footer">
+  <div class="nf-footer-inner">
+    <div class="nf-footer-brand">THE TURUCHI LAW FIRM, LLC</div>
+    <div class="nf-footer-meta">
+      <span>732-210-6410</span>
+    </div>
+  </div>
+</footer>
+
+<!-- STICKY MOBILE CTA -->
+<a href="tel:7322106410" class="mobile-cta">Call now · 732-210-6410</a>
+
+<script src="/js/main.js"></script>
+<!-- ════════════════ NAV JS ════════════════ -->
+<script>
+(function () {
+  var nav = document.querySelector('.nav');
+  if (!nav) return;
+
+  var triggers = nav.querySelectorAll('[data-nav-trigger]');
+  var megas = nav.querySelectorAll('.nav-mega');
+  var backdrop = document.querySelector('.nav-backdrop');
+  var body = document.body;
+
+  function closeAllMega() {
+    triggers.forEach(function (t) { t.setAttribute('aria-expanded', 'false'); });
+    megas.forEach(function (m) {
+      m.setAttribute('data-open', 'false');
+      m.setAttribute('aria-hidden', 'true');
+    });
+    if (backdrop) backdrop.setAttribute('data-open', 'false');
+  }
+
+  function openMega(name) {
+    triggers.forEach(function (t) {
+      t.setAttribute('aria-expanded', String(t.getAttribute('data-nav-trigger') === name));
+    });
+    megas.forEach(function (m) {
+      var open = m.getAttribute('data-mega') === name;
+      m.setAttribute('data-open', String(open));
+      m.setAttribute('aria-hidden', String(!open));
+    });
+    if (backdrop) backdrop.setAttribute('data-open', 'true');
+  }
+
+  triggers.forEach(function (trigger) {
+    var name = trigger.getAttribute('data-nav-trigger');
+    trigger.addEventListener('click', function (e) {
+      e.preventDefault();
+      var isOpen = trigger.getAttribute('aria-expanded') === 'true';
+      if (isOpen) closeAllMega();
+      else openMega(name);
+    });
+    // Open on focus-within keyboard navigation
+    trigger.addEventListener('focus', function () {
+      openMega(name);
+    });
+  });
+
+  // Hover open on desktop
+  if (window.matchMedia('(min-width: 900px)').matches) {
+    var hoverTarget = nav;
+    var hoverTimer;
+    triggers.forEach(function (trigger) {
+      var name = trigger.getAttribute('data-nav-trigger');
+      trigger.addEventListener('mouseenter', function () {
+        clearTimeout(hoverTimer);
+        openMega(name);
+      });
+    });
+    megas.forEach(function (m) {
+      m.addEventListener('mouseenter', function () {
+        clearTimeout(hoverTimer);
+      });
+      m.addEventListener('mouseleave', function () {
+        hoverTimer = setTimeout(closeAllMega, 180);
+      });
+    });
+    nav.addEventListener('mouseleave', function () {
+      hoverTimer = setTimeout(closeAllMega, 180);
+    });
+  }
+
+  // Close mega on backdrop click
+  if (backdrop) {
+    backdrop.addEventListener('click', closeAllMega);
+  }
+
+  // Close mega on Escape
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      closeAllMega();
+      closeDrawer();
+    }
+  });
+
+  // ─── Mobile drawer ───
+  var toggle = document.querySelector('.nav-toggle');
+  var drawer = document.querySelector('.nav-drawer');
+  var drawerClose = document.querySelector('.nav-drawer-close');
+
+  function openDrawer() {
+    if (!drawer) return;
+    drawer.setAttribute('data-open', 'true');
+    drawer.setAttribute('aria-hidden', 'false');
+    if (toggle) toggle.setAttribute('aria-expanded', 'true');
+    body.classList.add('nav-open');
+  }
+  function closeDrawer() {
+    if (!drawer) return;
+    drawer.setAttribute('data-open', 'false');
+    drawer.setAttribute('aria-hidden', 'true');
+    if (toggle) toggle.setAttribute('aria-expanded', 'false');
+    body.classList.remove('nav-open');
+  }
+
+  if (toggle) {
+    toggle.addEventListener('click', function () {
+      var isOpen = toggle.getAttribute('aria-expanded') === 'true';
+      if (isOpen) closeDrawer();
+      else openDrawer();
+    });
+  }
+  if (drawerClose) {
+    drawerClose.addEventListener('click', closeDrawer);
+  }
+
+  // Drawer section toggles
+  var drawerSections = document.querySelectorAll('[data-drawer-section]');
+  drawerSections.forEach(function (section) {
+    var btn = section.querySelector('.nav-drawer-section-toggle');
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+      var isOpen = section.getAttribute('data-open') === 'true';
+      section.setAttribute('data-open', String(!isOpen));
+      btn.setAttribute('aria-expanded', String(!isOpen));
+    });
+  });
+})();
+</script>
+<!-- ════════════════ /NAV JS ════════════════ -->
+
+
+</body>
+</html>

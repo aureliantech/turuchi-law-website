@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Turuchi Iheanachor — Founder, The Turuchi Law Firm | New Jersey</title>
+  <meta name="description" content="She fights for people who get ignored — in personal injury, workers' comp, immigration, and traffic cases across New Jersey. Meet Turuchi Iheanachor, founder of The Turuchi Law Firm.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/about.css">
+
+  <style>
+    /* ═══════════════════════════════════════════════════════════
+       NAV — primary navigation with mega menu
+       Overrides the basic .lp-header from css/styles.css
+       Mobile-first: hamburger → full-screen drawer; desktop adds
+       the mega menu panel that drops from the bar.
+       ═══════════════════════════════════════════════════════════ */
+
+    /* Hide the legacy .lp-header on pages where the new nav is present */
+    .nav ~ .lp-header,
+    .nav + .lp-header { display: none; }
+
+    .nav {
+      position: relative;
+      background: var(--ink);
+      color: var(--paper);
+      z-index: 200;
+      font-family: 'Inter Tight', sans-serif;
+    }
+    .nav-inner {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      position: relative;
+    }
+    @media (min-width: 900px) {
+      .nav-inner {
+        padding: 18px 32px;
+        gap: 32px;
+      }
+    }
+
+    /* Brand — stacked logotype + small-caps tag */
+    .nav-brand {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-decoration: none;
+      color: var(--paper);
+      gap: 2px;
+      line-height: 1;
+    }
+    .nav-brand-name {
+      font-family: 'Fraunces', serif;
+      font-weight: 400;
+      font-style: italic;
+      font-size: clamp(20px, 2.4vw, 26px);
+      letter-spacing: -0.01em;
+      color: var(--paper);
+    }
+    .nav-brand-tag {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 9.5px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(243,239,230,0.55);
+      font-weight: 600;
+    }
+    @media (min-width: 900px) {
+      .nav-brand-tag { font-size: 10.5px; }
+    }
+
+    /* Center nav (desktop only) */
+    .nav-center {
+      display: none;
+    }
+    @media (min-width: 900px) {
+      .nav-center {
+        display: flex;
+        align-items: center;
+        gap: 36px;
+      }
+    }
+    .nav-item {
+      position: relative;
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 14.5px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: var(--paper);
+      text-decoration: none;
+      background: none;
+      border: 0;
+      padding: 8px 0;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 280ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .nav-item:hover,
+    .nav-item:focus-visible,
+    .nav-item[aria-expanded="true"] {
+      color: #e8b894;
+      outline: none;
+    }
+    .nav-item-chevron {
+      width: 10px;
+      height: 10px;
+      transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .nav-item[aria-expanded="true"] .nav-item-chevron {
+      transform: rotate(180deg);
+    }
+    /* Tiny dot indicator under the active item */
+    .nav-item[aria-expanded="true"]::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: -10px;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: #e8b894;
+    }
+
+    /* Right CTA */
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      color: var(--paper);
+      text-decoration: none;
+      padding: 11px 18px;
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition:
+        transform 360ms cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 360ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    @media (min-width: 900px) {
+      .nav-cta { padding: 13px 22px; font-size: 13.5px; }
+    }
+    .nav-cta:hover {
+      transform: translateY(-2px);
+      box-shadow:
+        0 10px 24px -8px rgba(42, 77, 110, 0.55),
+        0 4px 12px -6px rgba(42, 77, 110, 0.35);
+    }
+    .nav-cta-phone {
+      display: none;
+    }
+    @media (min-width: 600px) {
+      .nav-cta-phone {
+        display: inline;
+        font-family: 'Fraunces', serif;
+        font-style: italic;
+        font-weight: 400;
+        font-size: 15px;
+        letter-spacing: 0;
+        text-transform: none;
+        margin-left: 2px;
+      }
+    }
+
+    /* Hamburger toggle (mobile only) */
+    .nav-toggle {
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 4px;
+      width: 44px;
+      height: 44px;
+      background: none;
+      border: 0;
+      cursor: pointer;
+      margin-left: 4px;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--paper);
+      transition: transform 360ms cubic-bezier(0.22, 1, 0.36, 1), opacity 280ms;
+    }
+    .nav-toggle[aria-expanded="true"] span:nth-child(1) {
+      transform: translateY(5.5px) rotate(45deg);
+    }
+    .nav-toggle[aria-expanded="true"] span:nth-child(2) {
+      opacity: 0;
+    }
+    .nav-toggle[aria-expanded="true"] span:nth-child(3) {
+      transform: translateY(-5.5px) rotate(-45deg);
+    }
+    @media (min-width: 900px) {
+      .nav-toggle { display: none; }
+    }
+
+    /* ─── MEGA MENU PANEL (desktop) ──────────────────────────── */
+    .nav-mega {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--ink);
+      color: var(--paper);
+      border-top: 1px solid rgba(243,239,230,0.08);
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition:
+        max-height 480ms cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 320ms cubic-bezier(0.22, 1, 0.36, 1),
+        visibility 0s linear 480ms;
+      z-index: 199;
+    }
+    .nav-mega[data-open="true"] {
+      max-height: 720px;
+      opacity: 1;
+      visibility: visible;
+      transition:
+        max-height 480ms cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 320ms cubic-bezier(0.22, 1, 0.36, 1),
+        visibility 0s linear 0s;
+    }
+    @media (max-width: 899px) {
+      .nav-mega { display: none; }
+    }
+    .nav-mega-inner {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      max-width: 1440px;
+      margin: 0 auto;
+      min-height: 480px;
+    }
+    @media (min-width: 1200px) {
+      .nav-mega-inner { grid-template-columns: 1fr 1.25fr; }
+    }
+
+    /* Left half — featured editorial moment */
+    .nav-mega-feature {
+      position: relative;
+      padding: 56px 48px 48px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: 18px;
+      color: var(--paper);
+      min-height: 480px;
+    }
+    .nav-mega-feature-img {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+    .nav-mega-feature-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      filter: contrast(1.05) saturate(0.85) brightness(0.72);
+    }
+    .nav-mega-feature-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(22,25,31,0.35) 0%, rgba(22,25,31,0.65) 70%, rgba(22,25,31,0.88) 100%),
+        linear-gradient(90deg, rgba(22,25,31,0.30) 0%, rgba(22,25,31,0.05) 50%);
+    }
+    .nav-mega-feature > *:not(.nav-mega-feature-img) {
+      position: relative;
+      z-index: 2;
+    }
+    .nav-mega-feature-eyebrow {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 10.5px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: #e8b894;
+      font-weight: 600;
+    }
+    .nav-mega-feature-headline {
+      font-family: 'Fraunces', serif;
+      font-weight: 300;
+      font-size: clamp(40px, 4.4vw, 60px);
+      line-height: 0.98;
+      letter-spacing: -0.025em;
+      color: var(--paper);
+      margin: 0;
+      max-width: 12ch;
+    }
+    .nav-mega-feature-headline em {
+      font-style: italic;
+      font-weight: 400;
+      color: #e8b894;
+    }
+    .nav-mega-feature-sub {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 14.5px;
+      line-height: 1.5;
+      color: rgba(243,239,230,0.78);
+      margin: 0;
+      max-width: 36ch;
+    }
+    .nav-mega-feature-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      align-self: flex-start;
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--paper);
+      text-decoration: none;
+      padding: 13px 22px;
+      border: 1px solid rgba(243,239,230,0.4);
+      transition: background 280ms cubic-bezier(0.22, 1, 0.36, 1),
+                  border-color 280ms cubic-bezier(0.22, 1, 0.36, 1),
+                  color 280ms cubic-bezier(0.22, 1, 0.36, 1);
+      margin-top: 6px;
+    }
+    .nav-mega-feature-cta:hover {
+      background: #e8b894;
+      border-color: #e8b894;
+      color: var(--ink);
+    }
+
+    /* Right half — practice area grid */
+    .nav-mega-grid-wrap {
+      padding: 56px 48px 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+    .nav-mega-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px 40px;
+    }
+    .nav-mega-entry {
+      display: flex;
+      gap: 16px;
+      text-decoration: none;
+      color: var(--paper);
+      padding: 14px 14px 14px 4px;
+      transition: background 240ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .nav-mega-entry:hover {
+      background: rgba(243,239,230,0.04);
+    }
+    .nav-mega-entry-num {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 22px;
+      color: rgba(243,239,230,0.55);
+      letter-spacing: -0.01em;
+      flex-shrink: 0;
+      line-height: 1.3;
+    }
+    .nav-mega-entry:hover .nav-mega-entry-num {
+      color: #e8b894;
+    }
+    .nav-mega-entry-text {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .nav-mega-entry-title {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--paper);
+      letter-spacing: -0.005em;
+    }
+    .nav-mega-entry-sub {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 13.5px;
+      color: rgba(243,239,230,0.6);
+      line-height: 1.45;
+    }
+
+    /* Highlighted footer row */
+    .nav-mega-footer {
+      margin-top: 4px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(243,239,230,0.12);
+    }
+    .nav-mega-footer a {
+      display: flex;
+      gap: 16px;
+      text-decoration: none;
+      color: #e8b894;
+      padding: 10px 14px 10px 4px;
+      transition: background 240ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .nav-mega-footer a:hover {
+      background: rgba(232, 184, 148, 0.06);
+    }
+    .nav-mega-footer-mark {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-size: 20px;
+      flex-shrink: 0;
+      line-height: 1.3;
+    }
+    .nav-mega-footer-text {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .nav-mega-footer-title {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: #e8b894;
+    }
+    .nav-mega-footer-sub {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 13px;
+      color: rgba(243,239,230,0.6);
+    }
+
+    /* ─── MOBILE DRAWER ────────────────────────────────────── */
+    .nav-drawer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--ink);
+      color: var(--paper);
+      z-index: 300;
+      transform: translateX(100%);
+      transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+    }
+    .nav-drawer[data-open="true"] {
+      transform: translateX(0);
+    }
+    @media (min-width: 900px) {
+      .nav-drawer { display: none; }
+    }
+    .nav-drawer-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+      border-bottom: 1px solid rgba(243,239,230,0.08);
+    }
+    .nav-drawer-close {
+      background: none;
+      border: 0;
+      color: var(--paper);
+      cursor: pointer;
+      width: 44px;
+      height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .nav-drawer-body {
+      flex: 1;
+      padding: 24px 20px 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .nav-drawer-section-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      background: none;
+      border: 0;
+      padding: 18px 0;
+      font-family: 'Fraunces', serif;
+      font-weight: 300;
+      font-size: 28px;
+      letter-spacing: -0.02em;
+      color: var(--paper);
+      border-bottom: 1px solid rgba(243,239,230,0.10);
+      cursor: pointer;
+      text-align: left;
+    }
+    .nav-drawer-section-toggle .nav-item-chevron {
+      width: 14px;
+      height: 14px;
+    }
+    .nav-drawer-section-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 360ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .nav-drawer-section[data-open="true"] .nav-drawer-section-content {
+      max-height: 700px;
+    }
+    .nav-drawer-section[data-open="true"] .nav-item-chevron {
+      transform: rotate(180deg);
+    }
+    .nav-drawer-section-content-inner {
+      padding: 12px 0 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .nav-drawer-link {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 14px 0;
+      text-decoration: none;
+      color: var(--paper);
+      border-bottom: 1px solid rgba(243,239,230,0.06);
+    }
+    .nav-drawer-link:last-child { border-bottom: 0; }
+    .nav-drawer-link-title {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 17px;
+      font-weight: 600;
+    }
+    .nav-drawer-link-sub {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 13px;
+      color: rgba(243,239,230,0.6);
+    }
+    .nav-drawer-link--accent {
+      color: #e8b894;
+    }
+    .nav-drawer-link--accent .nav-drawer-link-title { color: #e8b894; }
+
+    /* Direct (non-mega) drawer links */
+    .nav-drawer-direct {
+      display: block;
+      padding: 18px 0;
+      font-family: 'Fraunces', serif;
+      font-weight: 300;
+      font-size: 28px;
+      letter-spacing: -0.02em;
+      color: var(--paper);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(243,239,230,0.10);
+    }
+
+    /* Drawer footer — CTA */
+    .nav-drawer-foot {
+      padding: 24px 20px 40px;
+      border-top: 1px solid rgba(243,239,230,0.08);
+    }
+    .nav-drawer-foot-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: var(--accent);
+      color: var(--paper);
+      text-decoration: none;
+      padding: 18px 24px;
+      font-family: 'Inter Tight', sans-serif;
+      font-weight: 600;
+      font-size: 14.5px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      width: 100%;
+    }
+    .nav-drawer-foot-cta-num {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 18px;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    /* Body lock when drawer/mega is open */
+    body.nav-open { overflow: hidden; }
+
+    /* Backdrop for mega menu (desktop) — dim the rest of the page */
+    .nav-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(22, 25, 31, 0.35);
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 320ms cubic-bezier(0.22, 1, 0.36, 1), visibility 0s linear 320ms;
+      z-index: 198;
+    }
+    .nav-backdrop[data-open="true"] {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 320ms cubic-bezier(0.22, 1, 0.36, 1), visibility 0s linear 0s;
+    }
+    @media (max-width: 899px) {
+      .nav-backdrop { display: none; }
+    }
+
+  </style>
+  <!-- ═══ SEO META ═══ -->
+  <link rel="canonical" href="https://turuchilaw.com/about">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://turuchilaw.com/about">
+  <meta property="og:title" content="About Turuchi Iheanachor — Founder, The Turuchi Law Firm">
+  <meta property="og:description" content="She fights for people who get ignored — in personal injury, workers' comp, immigration, and traffic cases across New Jersey. Meet Turuchi Iheanachor, founder of The Turuchi Law Firm.">
+  <meta property="og:image" content="https://turuchilaw.com/share-images/share-about.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="The Turuchi Law Firm">
+  <meta property="og:locale" content="en_US">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://turuchilaw.com/about">
+  <meta name="twitter:title" content="About Turuchi Iheanachor — Founder, The Turuchi Law Firm">
+  <meta name="twitter:description" content="She fights for people who get ignored — in personal injury, workers' comp, immigration, and traffic cases across New Jersey. Meet Turuchi Iheanachor, founder of The Turuchi Law Firm.">
+  <meta name="twitter:image" content="https://turuchilaw.com/share-images/share-about.png">
+  
+  <!-- Favicons + theme color -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#16191f">
+  
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "@id": "https://turuchilaw.com/#legalservice",
+  "name": "The Turuchi Law Firm",
+  "alternateName": "The Turuchi Law Firm, LLC",
+  "url": "https://turuchilaw.com",
+  "logo": "https://turuchilaw.com/public/images/turuchi-portrait.jpg",
+  "image": "https://turuchilaw.com/share-images/share-home.png",
+  "telephone": "+1-732-210-6410",
+  "email": "info@turuchilawfirm.com",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "111 Town Square Place",
+    "addressLocality": "Jersey City",
+    "addressRegion": "NJ",
+    "postalCode": "07310",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 40.7295,
+    "longitude": -74.0376
+  },
+  "areaServed": {
+    "@type": "State",
+    "name": "New Jersey"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "09:00",
+      "closes": "17:00"
+    }
+  ],
+  "sameAs": [
+    "https://www.google.com/search?q=turuchi+law"
+  ],
+  "founder": {
+    "@type": "Person",
+    "name": "Turuchi Iheanachor",
+    "jobTitle": "Founder & Managing Attorney"
+  },
+  "serviceType": [
+    "Personal Injury Law",
+    "Workers' Compensation",
+    "Immigration Law",
+    "Traffic Law",
+    "DUI Defense"
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "17",
+    "bestRating": "5"
+  }
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Attorney",
+  "name": "Turuchi Iheanachor",
+  "jobTitle": "Founder & Managing Attorney",
+  "worksFor": {
+    "@type": "LegalService",
+    "name": "The Turuchi Law Firm"
+  },
+  "image": "https://turuchilaw.com/public/images/turuchi-portrait.jpg",
+  "url": "https://turuchilaw.com/about",
+  "telephone": "+1-732-210-6410",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "111 Town Square Place",
+    "addressLocality": "Jersey City",
+    "addressRegion": "NJ",
+    "postalCode": "07310",
+    "addressCountry": "US"
+  },
+  "alumniOf": [],
+  "knowsAbout": [
+    "Personal Injury Law",
+    "Workers' Compensation",
+    "Immigration Law",
+    "Traffic Law"
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://turuchilaw.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "About",
+      "item": "https://turuchilaw.com/about"
+    }
+  ]
+}
+  </script>
+  <!-- ═══ /SEO META ═══ -->
+</head>
+<body>
+
+<!-- ════════════════ NAV ════════════════ -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">
+      <span class="nav-brand-name">THE TURUCHI LAW FIRM, LLC</span>
+      <span class="nav-brand-tag">NJ · Personal Injury · Tickets and DUI · Workers' Comp</span>
+    </a>
+
+    <nav class="nav-center" aria-label="Primary">
+      <button class="nav-item" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="nav-mega-practice" data-nav-trigger="practice">
+        Practice Areas
+        <svg class="nav-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <a class="nav-item" href="/reviews">Reviews</a>
+      <a class="nav-item" href="/contact">Contact</a>
+    </nav>
+
+    <a href="tel:7322106410" class="nav-cta">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <span>Call</span>
+      <span class="nav-cta-phone">732 · 210 · 6410</span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-drawer" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <!-- Mega menu: Practice Areas -->
+  <div class="nav-mega" id="nav-mega-practice" data-mega="practice" aria-hidden="true">
+    <div class="nav-mega-inner">
+
+      <!-- Left: featured editorial moment -->
+      <div class="nav-mega-feature">
+        <div class="nav-mega-feature-img">
+          <img src="public/images/turuchi-editorial.webp" alt="" loading="lazy">
+        </div>
+        <div class="nav-mega-feature-eyebrow">Practice Areas</div>
+        <h2 class="nav-mega-feature-headline">A boutique firm. <em>Built around your case.</em></h2>
+        <p class="nav-mega-feature-sub">We take a small number of cases and work them like a craft — across personal injury, traffic and DUI, immigration, and workers' comp.</p>
+        <a href="tel:7322106410" class="nav-mega-feature-cta">
+          Call 732 · 210 · 6410
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+
+      <!-- Right: 2x2 practice grid + accent footer row -->
+      <div class="nav-mega-grid-wrap">
+        <div class="nav-mega-grid">
+          <a href="/personal-injury" class="nav-mega-entry">
+            <span class="nav-mega-entry-num">01</span>
+            <span class="nav-mega-entry-text">
+              <span class="nav-mega-entry-title">Personal Injury</span>
+              <span class="nav-mega-entry-sub">Car, truck, slip &amp; fall, wrongful death</span>
+            </span>
+          </a>
+          <a href="/traffic-dui" class="nav-mega-entry">
+            <span class="nav-mega-entry-num">02</span>
+            <span class="nav-mega-entry-text">
+              <span class="nav-mega-entry-title">Traffic &amp; DUI</span>
+              <span class="nav-mega-entry-sub">Tickets, DUI, license issues</span>
+            </span>
+          </a>
+          <a href="/immigration" class="nav-mega-entry">
+            <span class="nav-mega-entry-num">03</span>
+            <span class="nav-mega-entry-text">
+              <span class="nav-mega-entry-title">Immigration</span>
+              <span class="nav-mega-entry-sub">Family, citizenship, removal, asylum</span>
+            </span>
+          </a>
+          <a href="/workers-comp" class="nav-mega-entry">
+            <span class="nav-mega-entry-num">04</span>
+            <span class="nav-mega-entry-text">
+              <span class="nav-mega-entry-title">Workers' Comp</span>
+              <span class="nav-mega-entry-sub">Hurt at work — you have rights</span>
+            </span>
+          </a>
+        </div>
+
+        <div class="nav-mega-footer">
+          <a href="tel:7322106410">
+            <span class="nav-mega-footer-mark">→</span>
+            <span class="nav-mega-footer-text">
+              <span class="nav-mega-footer-title">Not sure which fits?</span>
+              <span class="nav-mega-footer-sub">Call us. We'll tell you in two minutes.</span>
+            </span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+<!-- Backdrop (desktop mega menu) -->
+<div class="nav-backdrop" aria-hidden="true"></div>
+
+<!-- Mobile drawer -->
+<aside class="nav-drawer" id="nav-drawer" aria-hidden="true">
+  <div class="nav-drawer-head">
+    <a href="/" class="nav-brand">
+      <span class="nav-brand-name">THE TURUCHI LAW FIRM, LLC</span>
+      <span class="nav-brand-tag">NJ · Boutique Firm</span>
+    </a>
+    <button class="nav-drawer-close" type="button" aria-label="Close menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+
+  <div class="nav-drawer-body">
+    <div class="nav-drawer-section" data-drawer-section>
+      <button class="nav-drawer-section-toggle" type="button" aria-expanded="false">
+        Practice Areas
+        <svg class="nav-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="nav-drawer-section-content">
+        <div class="nav-drawer-section-content-inner">
+          <a href="/personal-injury" class="nav-drawer-link">
+            <span class="nav-drawer-link-title">Personal Injury</span>
+            <span class="nav-drawer-link-sub">Car, truck, slip &amp; fall, wrongful death</span>
+          </a>
+          <a href="/traffic-dui" class="nav-drawer-link">
+            <span class="nav-drawer-link-title">Traffic &amp; DUI</span>
+            <span class="nav-drawer-link-sub">Tickets, DUI, license issues</span>
+          </a>
+          <a href="/immigration" class="nav-drawer-link">
+            <span class="nav-drawer-link-title">Immigration</span>
+            <span class="nav-drawer-link-sub">Family, citizenship, removal, asylum</span>
+          </a>
+          <a href="/workers-comp" class="nav-drawer-link">
+            <span class="nav-drawer-link-title">Workers' Comp</span>
+            <span class="nav-drawer-link-sub">Hurt at work — you have rights</span>
+          </a>
+          <a href="tel:7322106410" class="nav-drawer-link nav-drawer-link--accent">
+            <span class="nav-drawer-link-title">Not sure which fits? Call →</span>
+            <span class="nav-drawer-link-sub">We'll tell you in two minutes</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <a href="/reviews" class="nav-drawer-direct">Reviews</a>
+    <a href="/contact" class="nav-drawer-direct">Contact</a>
+  </div>
+
+  <div class="nav-drawer-foot">
+    <a href="tel:7322106410" class="nav-drawer-foot-cta">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Call
+      <span class="nav-drawer-foot-cta-num">732 · 210 · 6410</span>
+    </a>
+  </div>
+</aside>
+<!-- ════════════════ /NAV ════════════════ -->
+
+<!-- ABOUT HERO — editorial composition -->
+<section class="ed-hero" aria-labelledby="ed-hero-headline">
+  <!-- Masthead bar across top -->
+  <div class="ed-masthead">
+    <div class="ed-masthead-cell ed-masthead-cell--label"></div>
+    <div class="ed-masthead-cell ed-masthead-cell--rule"></div>
+    <div class="ed-masthead-cell ed-masthead-cell--center">The Turuchi Law Firm · The Founder</div>
+    <div class="ed-masthead-cell ed-masthead-cell--rule"></div>
+    <div class="ed-masthead-cell ed-masthead-cell--date">New Jersey</div>
+  </div>
+
+  <!-- Editorial composition -->
+  <div class="ed-stage">
+    <!-- Portrait — foundation layer -->
+    <div class="ed-portrait">
+      <img src="public/images/turuchi-portrait.jpg" alt="Turuchi Iheanachor, founder of The Turuchi Law Firm" loading="eager" fetchpriority="high">
+      <span class="ed-portrait-tag">— Photographed in Jersey City</span>
+    </div>
+
+    <!-- Side rail with vertical metadata -->
+    <div class="ed-rail" aria-hidden="true">
+      <span class="ed-rail-text">A profile · Turuchi Iheanachor · Founder &amp; managing attorney</span>
+    </div>
+
+    <!-- Title layer — typography over image -->
+    <h1 class="ed-headline" id="ed-hero-headline">
+      <span class="ed-headline-row ed-headline-row--1">I represent</span>
+      <span class="ed-headline-row ed-headline-row--2">the people</span>
+      <span class="ed-headline-row ed-headline-row--3">the system</span>
+      <span class="ed-headline-row ed-headline-row--4">was built to <em>wear&nbsp;down.</em></span>
+    </h1>
+
+    <!-- Byline block -->
+    <aside class="ed-byline">
+      <div class="ed-byline-label">— The founder, in her own words</div>
+      <p class="ed-byline-text">A career that started defending insurance companies. A firm built to do the opposite. A practice for the cases other lawyers walk away from.</p>
+      <div class="ed-byline-signature">
+        <span class="ed-byline-name">Turuchi Iheanachor</span>
+        <span class="ed-byline-role">Founder &amp; Managing Attorney</span>
+      </div>
+    </aside>
+
+    <!-- Edition number — bottom right corner accent -->
+    <div class="ed-edition" aria-hidden="true">
+      <span class="ed-edition-no">N<sup>o</sup></span>
+      <span class="ed-edition-num">01</span>
+    </div>
+  </div>
+</section>
+
+<!-- PULL QUOTE -->
+<section class="about-pullquote">
+  <div class="about-pullquote-inner">
+    <p>
+      "I spent the start of my career defending insurance companies. I learned exactly how they undervalue claims, how they wear people down, and what makes them <em>actually pay.</em> Now that knowledge sits on my clients' side of the table."
+    </p>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="about-story">
+  <div class="about-story-inner">
+    <div class="about-story-image">
+      <img src="public/images/turuchi-editorial.webp" alt="Turuchi Iheanachor">
+    </div>
+    <div class="about-story-text">
+      <div class="about-eyebrow">— My story</div>
+      <h2>From defending insurers to <em>representing the injured.</em></h2>
+      <p>I began my career on the defense side — representing insurance companies, the corporations they protect, and the institutions that often outspend and outlast the people they harm. I learned the playbook from inside. I saw which cases got settled, which got fought, and which got pushed aside.</p>
+      <p>What I also saw was the kind of person who lost most often: the injured worker who didn't know they had rights. The immigrant who was told their case wasn't worth anything. The driver whose lawyer stopped returning calls. Good people, fighting a system designed to wear them down.</p>
+      <p>I built this firm to be the answer to that. A practice where every client is taken seriously, every case is built carefully, and every decision is explained clearly — by a lawyer, in plain language, every step of the way.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CREDENTIALS -->
+<section class="about-credentials">
+  <div class="about-credentials-inner">
+    <div class="about-eyebrow">— Background</div>
+    <h2>Credentials &amp; <em>experience.</em></h2>
+
+    <div class="about-credentials-grid">
+      <div class="about-credential">
+        <div class="about-credential-num">01</div>
+        <div class="about-credential-body">
+          <h3>Former insurance defense attorney</h3>
+          <p>Years spent defending insurance companies, carriers, and large institutions — learning the strategies used to undervalue and deny claims.</p>
+        </div>
+      </div>
+      <div class="about-credential">
+        <div class="about-credential-num">02</div>
+        <div class="about-credential-body">
+          <h3>Admitted in New Jersey</h3>
+          <p>Licensed to practice in all New Jersey state and federal courts. Active member of the New Jersey State Bar.</p>
+        </div>
+      </div>
+      <div class="about-credential">
+        <div class="about-credential-num">03</div>
+        <div class="about-credential-body">
+          <h3>Multi-practice trial experience</h3>
+          <p>Personal injury litigation, workers' compensation, immigration, and municipal court — with substantive courtroom experience in each.</p>
+        </div>
+      </div>
+      <div class="about-credential">
+        <div class="about-credential-num">04</div>
+        <div class="about-credential-body">
+          <h3>Founder &amp; managing attorney</h3>
+          <p>Founded The Turuchi Law Firm to build a different kind of practice — one where clients get the lawyer, not a handoff to junior staff.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="about-philosophy">
+  <div class="about-philosophy-inner">
+    <div class="about-eyebrow about-eyebrow--gold">— How I work</div>
+    <h2>My approach to <em>every case.</em></h2>
+
+    <ol class="about-philosophy-list">
+      <li>
+        <div class="about-phi-num">i.</div>
+        <div class="about-phi-text">
+          <h3>I take the cases other firms turn down.</h3>
+          <p>If you were told your case is not worth it, that is exactly when I want to hear from you. Some of my best results came from cases that looked small at first.</p>
+        </div>
+      </li>
+      <li>
+        <div class="about-phi-num">ii.</div>
+        <div class="about-phi-text">
+          <h3>I prepare every file like it's going to trial.</h3>
+          <p>Most cases end in a settlement — that's normal. But getting ready for court is what drives that number up. The insurance company pays more when it sees a lawyer who is ready to fight in front of a judge.</p>
+        </div>
+      </li>
+      <li>
+        <div class="about-phi-num">iii.</div>
+        <div class="about-phi-text">
+          <h3>I explain everything in plain language.</h3>
+          <p>You'll never wonder where your case stands or what's happening next. Communication isn't a courtesy — it's part of how the work actually gets done well.</p>
+        </div>
+      </li>
+      <li>
+        <div class="about-phi-num">iv.</div>
+        <div class="about-phi-text">
+          <h3>I treat the relationship as a partnership.</h3>
+          <p>Your input matters. Your time matters. Your dignity matters. The work happens with you, not to you.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="about-testimonial">
+  <div class="about-testimonial-inner">
+    <div class="about-testimonial-mark" aria-hidden="true">&ldquo;</div>
+    <p class="about-testimonial-quote">She took my case when I thought I had no hope. Her dedication and thorough research turned everything around. I can't recommend her highly enough.</p>
+    <div class="about-testimonial-attribution">
+      <strong>Adaeze Oforeh</strong> · Personal Injury Client · Verified Google Review
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="final-cta-inner">
+    <div class="final-cta-eyebrow">— Ready to talk?</div>
+    <h2 class="final-cta-headline">Tell me what happened. <em>I'll listen.</em></h2>
+    <p class="final-cta-sub">Free consultation. Confidential. The first call is just a conversation — no pressure, no commitment. I'll give you a straight read on what your case looks like and what your options are.</p>
+    <div class="final-cta-row">
+      <a href="tel:7322106410" class="final-cta-button">
+        732 · 210 · 6410
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <div class="final-cta-meta">
+        <strong>Free consultation</strong>
+        Available across New Jersey · By phone, video, or in person
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">THE TURUCHI LAW FIRM, LLC</div>
+      <div class="footer-tag">Personal Injury · New Jersey · Available Statewide</div>
+    </div>
+    <div class="footer-col">
+      <h4>Call</h4>
+      <a href="tel:7322106410">732-210-6410</a>
+      <p>Mon–Fri, 9 AM – 5 PM ET</p>
+    </div>
+    <div class="footer-col">
+      <h4>Practice</h4>
+      <a href="personal-injury.html">Personal Injury</a>
+      <a href="workers-comp.html">Workers' Comp</a>
+      <a href="traffic-dui.html">Traffic &amp; DUI</a>
+      <a href="immigration.html">Immigration</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 The Turuchi Law Firm, LLC. All rights reserved.</div>
+  </div>
+  <div class="footer-disclaimer">
+    Attorney advertising. Prior results do not guarantee a similar outcome. The information on this website is for general informational purposes only and does not constitute legal advice or the formation of an attorney-client relationship.
+  </div>
+</footer>
+
+<a href="tel:7322106410" class="mobile-cta">Call now · 732-210-6410</a>
+
+<script src="js/main.js"></script>
+<!-- ════════════════ NAV JS ════════════════ -->
+<script>
+(function () {
+  var nav = document.querySelector('.nav');
+  if (!nav) return;
+
+  var triggers = nav.querySelectorAll('[data-nav-trigger]');
+  var megas = nav.querySelectorAll('.nav-mega');
+  var backdrop = document.querySelector('.nav-backdrop');
+  var body = document.body;
+
+  function closeAllMega() {
+    triggers.forEach(function (t) { t.setAttribute('aria-expanded', 'false'); });
+    megas.forEach(function (m) {
+      m.setAttribute('data-open', 'false');
+      m.setAttribute('aria-hidden', 'true');
+    });
+    if (backdrop) backdrop.setAttribute('data-open', 'false');
+  }
+
+  function openMega(name) {
+    triggers.forEach(function (t) {
+      t.setAttribute('aria-expanded', String(t.getAttribute('data-nav-trigger') === name));
+    });
+    megas.forEach(function (m) {
+      var open = m.getAttribute('data-mega') === name;
+      m.setAttribute('data-open', String(open));
+      m.setAttribute('aria-hidden', String(!open));
+    });
+    if (backdrop) backdrop.setAttribute('data-open', 'true');
+  }
+
+  triggers.forEach(function (trigger) {
+    var name = trigger.getAttribute('data-nav-trigger');
+    trigger.addEventListener('click', function (e) {
+      e.preventDefault();
+      var isOpen = trigger.getAttribute('aria-expanded') === 'true';
+      if (isOpen) closeAllMega();
+      else openMega(name);
+    });
+    // Open on focus-within keyboard navigation
+    trigger.addEventListener('focus', function () {
+      openMega(name);
+    });
+  });
+
+  // Hover open on desktop
+  if (window.matchMedia('(min-width: 900px)').matches) {
+    var hoverTarget = nav;
+    var hoverTimer;
+    triggers.forEach(function (trigger) {
+      var name = trigger.getAttribute('data-nav-trigger');
+      trigger.addEventListener('mouseenter', function () {
+        clearTimeout(hoverTimer);
+        openMega(name);
+      });
+    });
+    megas.forEach(function (m) {
+      m.addEventListener('mouseenter', function () {
+        clearTimeout(hoverTimer);
+      });
+      m.addEventListener('mouseleave', function () {
+        hoverTimer = setTimeout(closeAllMega, 180);
+      });
+    });
+    nav.addEventListener('mouseleave', function () {
+      hoverTimer = setTimeout(closeAllMega, 180);
+    });
+  }
+
+  // Close mega on backdrop click
+  if (backdrop) {
+    backdrop.addEventListener('click', closeAllMega);
+  }
+
+  // Close mega on Escape
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      closeAllMega();
+      closeDrawer();
+    }
+  });
+
+  // ─── Mobile drawer ───
+  var toggle = document.querySelector('.nav-toggle');
+  var drawer = document.querySelector('.nav-drawer');
+  var drawerClose = document.querySelector('.nav-drawer-close');
+
+  function openDrawer() {
+    if (!drawer) return;
+    drawer.setAttribute('data-open', 'true');
+    drawer.setAttribute('aria-hidden', 'false');
+    if (toggle) toggle.setAttribute('aria-expanded', 'true');
+    body.classList.add('nav-open');
+  }
+  function closeDrawer() {
+    if (!drawer) return;
+    drawer.setAttribute('data-open', 'false');
+    drawer.setAttribute('aria-hidden', 'true');
+    if (toggle) toggle.setAttribute('aria-expanded', 'false');
+    body.classList.remove('nav-open');
+  }
+
+  if (toggle) {
+    toggle.addEventListener('click', function () {
+      var isOpen = toggle.getAttribute('aria-expanded') === 'true';
+      if (isOpen) closeDrawer();
+      else openDrawer();
+    });
+  }
+  if (drawerClose) {
+    drawerClose.addEventListener('click', closeDrawer);
+  }
+
+  // Drawer section toggles
+  var drawerSections = document.querySelectorAll('[data-drawer-section]');
+  drawerSections.forEach(function (section) {
+    var btn = section.querySelector('.nav-drawer-section-toggle');
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+      var isOpen = section.getAttribute('data-open') === 'true';
+      section.setAttribute('data-open', String(!isOpen));
+      btn.setAttribute('aria-expanded', String(!isOpen));
+    });
+  });
+})();
+</script>
+<!-- ════════════════ /NAV JS ════════════════ -->
+
+
+</body>
+</html>
