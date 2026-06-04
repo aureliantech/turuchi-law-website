@@ -2281,7 +2281,7 @@
       letter-spacing: -0.01em;
       color: var(--ink);
       margin: 0;
-      max-width: 28ch;
+      max-width: none;
     }
     .dui-v2-pullquote-text strong {
       font-weight: 400;
@@ -3389,7 +3389,7 @@
       letter-spacing: -0.02em;
       color: var(--ink);
       margin: 0;
-      max-width: 22ch;
+      max-width: none;
     }
     .voices-v2-hero-quote strong {
       font-weight: 400;
@@ -4131,6 +4131,12 @@
       position: relative;
       overflow: hidden;
       text-align: center;
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
     @media (min-width: 900px) {
       .close-v2 { padding: 128px 56px 96px; }
@@ -5498,7 +5504,7 @@
             <span class="proof-v2-rating-out">/ 5</span>
           </div>
           <p class="proof-v2-rating-meta">
-            <strong>Every one</strong> of our Google reviews is five stars. No exceptions.
+            <strong>Real reviews</strong> from the clients we've worked with.
           </p>
         </div>
       </div>
@@ -5560,7 +5566,7 @@
         <div class="dui-v2-entry-body">
           <h2 class="dui-v2-entry-title">DUI — <em>first offense.</em></h2>
           <p class="dui-v2-entry-line">
-            One arrest is enough to put your license, your job, and a sizeable chunk of your savings on the line. The first 24 hours after a DUI charge are when the case is won or lost.
+            One arrest can put your license, your job, and a chunk of your savings on the line — and the first days matter most.
           </p>
         </div>
         <div class="dui-v2-entry-tags">
@@ -5578,7 +5584,7 @@
         <div class="dui-v2-entry-body">
           <h2 class="dui-v2-entry-title">Refusing the <em>breath test.</em></h2>
           <p class="dui-v2-entry-line">
-            Refusing the breath test is its own charge — separate from the DUI itself — with its own license penalty. The two can stack, so a refusal is rarely the safe move people think it is.
+            Refusing the breath test is its own charge, with its own license penalty — and it can stack on top of the DUI.
           </p>
         </div>
         <div class="dui-v2-entry-tags">
@@ -5612,7 +5618,7 @@
         <div class="dui-v2-entry-body">
           <h2 class="dui-v2-entry-title">A second or third <em>DUI.</em></h2>
           <p class="dui-v2-entry-line">
-            Penalties don't just rise — they multiply. A second DUI brings months of license loss, a required ignition interlock device, and jail time that's measured in days, not hours. A third is in another category entirely.
+            Penalties don't just rise — they multiply: longer license loss, an ignition interlock, and jail measured in days, not hours.
           </p>
         </div>
         <div class="dui-v2-entry-tags">
@@ -5629,7 +5635,7 @@
         <div class="dui-v2-entry-body">
           <h2 class="dui-v2-entry-title">CDL holders — <em>your job is on the line.</em></h2>
           <p class="dui-v2-entry-line">
-            A DUI you got driving your own personal car can still end your commercial license. Federal rules are stricter than state rules, and for many truck and bus drivers, a single charge ends the career.
+            A DUI in your personal car can still end your commercial license — federal rules are stricter, and one charge can end the career.
           </p>
         </div>
         <div class="dui-v2-entry-tags">
@@ -5952,83 +5958,6 @@
   </div>
 </section>
 
-<!-- FLOW SECTION (rebuilt: vertical numbered timeline) -->
-<section class="flow-v2">
-  <div class="flow-v2-inner">
-
-    <header class="flow-v2-header">
-      <div class="flow-v2-eyebrow" data-reveal="text">What happens when you call</div>
-      <h2 class="flow-v2-headline" data-reveal="text" data-reveal-delay="120">
-        Exactly what happens — <em>no surprises.</em>
-      </h2>
-    </header>
-
-    <ol class="flow-v2-steps">
-
-      <li class="flow-v2-step" data-reveal="text">
-        <div class="flow-v2-step-num">01</div>
-        <div class="flow-v2-step-body">
-          <h3 class="flow-v2-step-title">Someone <em>listens.</em></h3>
-          <p class="flow-v2-step-line">You tell us the charge, the court, the date. No script.</p>
-        </div>
-        <div class="flow-v2-step-pill">
-          <span class="flow-v2-step-pill-dot" aria-hidden="true"></span>
-          About 5 min
-        </div>
-      </li>
-
-      <li class="flow-v2-step" data-reveal="text" data-reveal-delay="120">
-        <div class="flow-v2-step-num">02</div>
-        <div class="flow-v2-step-body">
-          <h3 class="flow-v2-step-title">We tell you <em>if we can help.</em></h3>
-          <p class="flow-v2-step-line">Straight answer. If we're the wrong fit, we'll say so.</p>
-        </div>
-        <div class="flow-v2-step-pill">
-          <span class="flow-v2-step-pill-dot" aria-hidden="true"></span>
-          No commitment
-        </div>
-      </li>
-
-      <li class="flow-v2-step" data-reveal="text" data-reveal-delay="240">
-        <div class="flow-v2-step-num">03</div>
-        <div class="flow-v2-step-body">
-          <h3 class="flow-v2-step-title">You meet <em>Turuchi.</em></h3>
-          <p class="flow-v2-step-line">If we're a fit, she calls you directly to go over your case.</p>
-        </div>
-        <div class="flow-v2-step-pill">
-          <span class="flow-v2-step-pill-dot" aria-hidden="true"></span>
-          At your pace
-        </div>
-      </li>
-
-      <li class="flow-v2-step" data-reveal="text" data-reveal-delay="360">
-        <div class="flow-v2-step-num">04</div>
-        <div class="flow-v2-step-body">
-          <h3 class="flow-v2-step-title">We argue <em>in court.</em></h3>
-          <p class="flow-v2-step-line">Negotiation, prep, every appearance. We do all of it.</p>
-        </div>
-        <div class="flow-v2-step-pill">
-          <span class="flow-v2-step-pill-dot" aria-hidden="true"></span>
-          Flat fee
-        </div>
-      </li>
-
-    </ol>
-
-    <div class="flow-v2-footnote" data-reveal="text">
-      <div class="flow-v2-footnote-icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="4" y="11" width="16" height="10" rx="2"/>
-          <path d="M8 11V7a4 4 0 0 1 8 0v4"/>
-        </svg>
-      </div>
-      <p class="flow-v2-footnote-text">
-        <strong>Nothing is signed</strong> and <strong>no fees are charged</strong> until you decide to hire us. The first call is free, private, and yours to end at any time.
-      </p>
-    </div>
-
-  </div>
-</section>
 
 <!-- Q&A SECTION (rebuilt: objection-priority index) -->
 <section class="qa-v3">
@@ -6053,7 +5982,7 @@
             <span class="qa-v3-item-toggle" aria-hidden="true"></span>
           </summary>
           <div class="qa-v3-item-a">
-            <p>Flat fees start at $3,000. The exact price depends on the charge, the court, and complexity. <strong>You'll know the full price before you hire us — no hidden fees, no hourly surprises.</strong> Payment plans available. The first call is free.</p>
+            <p>Flat fees start at $3,000+. The exact price depends on the charge, the court, and complexity. <strong>You'll know the full price before you hire us — no hidden fees, no hourly surprises.</strong> Payment plans available. The first call is free.</p>
           </div>
         </details>
       </li>

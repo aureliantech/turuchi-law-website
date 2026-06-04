@@ -2281,7 +2281,7 @@
       letter-spacing: -0.01em;
       color: var(--ink);
       margin: 0;
-      max-width: 28ch;
+      max-width: none;
     }
     .dui-v2-pullquote-text strong {
       font-weight: 400;
@@ -3389,7 +3389,7 @@
       letter-spacing: -0.02em;
       color: var(--ink);
       margin: 0;
-      max-width: 22ch;
+      max-width: none;
     }
     .voices-v2-hero-quote strong {
       font-weight: 400;
@@ -4131,6 +4131,12 @@
       position: relative;
       overflow: hidden;
       text-align: center;
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
     @media (min-width: 900px) {
       .close-v2 { padding: 128px 56px 96px; }
