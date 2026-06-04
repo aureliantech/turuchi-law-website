@@ -3,41 +3,17 @@
    Base styles target mobile. Min-width queries scale up.
    ════════════════════════════════════════════════════════════ */
 
-/* ============================================================
-   THE TURUCHI LAW FIRM — CANONICAL BRAND PALETTE
-   Single source of truth. Loaded site-wide via styles.css.
-   ------------------------------------------------------------
-   ACCENT    Slate Navy — the one action color (CTAs, links)
-   PEACH     Warm accent — eyebrows, italic emphasis, dividers on dark
-   GOLD      Star-rating glyphs / secondary metallic
-   AMBER     Functional only — the large "5.0" rating number (do not rebrand)
-   Neutrals  Cooled a few degrees so they agree with navy.
-   Identity  Navy + Peach + Cream (gold for ratings).
-   ============================================================ */
 :root {
-  /* Neutrals — light */
-  --paper:        #f3efe6;   /* primary light background */
-  --paper-deep:   #e9e3d5;   /* banding, cards */
-  --paper-warm:   #fbf9f3;   /* lightest surface */
-  /* Neutrals — dark (cooled) */
-  --ink:          #16191f;   /* primary dark background / text */
-  --ink-soft:     #2f333b;   /* secondary text */
-  --ink-mute:     #5e5f5c;   /* muted labels (neutral, not brown) */
-  --rule:         #c2bcae;   /* hairlines on light */
-  /* Accent — Navy */
-  --accent:       #2a4d6e;   /* CTAs, links, accents */
-  --accent-deep:  #1f3a52;   /* hover / pressed */
-  --navy-deep:    #16294d;   /* darkest navy fill */
-  /* Peach — warm accent (eyebrows, italics, dividers on dark) */
-  --peach:        #e8b894;   /* primary warm accent */
-  --peach-light:  #f4c8a8;   /* light peach */
-  --peach-rose:   #d4a98c;   /* rose-tan */
-  /* Gold — star ratings / secondary */
-  --gold:         #c89a3a;   /* star-rating glyphs */
-  --gold-deep:    #a07b2e;
-  --gold-light:   #d4a85a;
-  /* Functional */
-  --amber:        #f5b800;   /* star rating — leave as-is */
+  --paper: #f4f0e8;
+  --paper-deep: #ebe5d8;
+  --ink: #16140f;
+  --ink-soft: #2c2820;
+  --ink-mute: #6b6557;
+  --rule: #c7bfa9;
+  --accent: #8c1d18;
+  --accent-deep: #6e1612;
+  --gold: #a07b2e;
+  --gold-light: #d4a85a;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -73,7 +49,7 @@ body::before {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(243, 239, 230, 0.96);
+  background: rgba(244, 240, 232, 0.96);
   border-bottom: 1px solid var(--rule);
   padding: 14px 20px;
   display: flex;
@@ -272,11 +248,11 @@ body::before {
 .recognition-grid {
   display: grid;
   grid-template-columns: 1fr;
-  border-top: 1px solid #1e2128;
+  border-top: 1px solid #3a342a;
 }
 .recognition-item {
   padding: 22px 0;
-  border-bottom: 1px solid #1e2128;
+  border-bottom: 1px solid #3a342a;
 }
 .recognition-item-num {
   font-family: 'Fraunces', serif;
@@ -299,7 +275,7 @@ body::before {
   .recognition-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .recognition-item {
     padding: 36px 32px 36px 0;
-    border-right: 1px solid #1e2128;
+    border-right: 1px solid #3a342a;
   }
   .recognition-item:last-child { border-right: none; }
   .recognition-item:nth-child(n+2) { padding-left: 32px; }
@@ -331,7 +307,7 @@ body::before {
   letter-spacing: 0.18em;
   color: var(--paper);
   text-transform: uppercase;
-  background: rgba(20, 22, 27, 0.82);
+  background: rgba(22, 20, 15, 0.82);
   padding: 5px 8px;
 }
 .founder-label {
@@ -515,7 +491,7 @@ body::before {
     align-items: baseline;
     transition: background 0.3s;
   }
-  .promise:hover { background: rgba(42, 77, 110, 0.02); }
+  .promise:hover { background: rgba(140, 29, 24, 0.02); }
   .promise-num { font-size: 22px; }
   .promise-title { font-size: 26px; }
   .promise-body { font-size: 17px; }
@@ -532,22 +508,22 @@ body::before {
 .practice .section-eyebrow::before { color: var(--gold-light); }
 .practice .section-title { color: var(--paper); }
 .practice .section-title em { color: var(--gold-light); }
-.practice .section-lede { color: #b6b4aa; }
+.practice .section-lede { color: #bcb6a4; }
 
 .practice-grid {
   display: grid;
   grid-template-columns: 1fr;
-  border-top: 1px solid #1e2128;
+  border-top: 1px solid #3a342a;
 }
 .practice-item {
   padding: 24px 0;
-  border-bottom: 1px solid #1e2128;
+  border-bottom: 1px solid #3a342a;
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 .practice-item.lead {
-  background: linear-gradient(180deg, rgba(42,77,110,0.16), transparent 80%);
+  background: linear-gradient(180deg, rgba(140,29,24,0.16), transparent 80%);
   padding: 26px 14px 26px 0;
 }
 .practice-item-eyebrow {
@@ -564,7 +540,7 @@ body::before {
   font-weight: 500;
 }
 .practice-item.lead .practice-item-title { font-size: 30px; }
-.practice-item-desc { font-size: 14px; line-height: 1.55; color: #b6b4aa; }
+.practice-item-desc { font-size: 14px; line-height: 1.55; color: #bcb6a4; }
 .practice-item-link {
   font-size: 11px;
   letter-spacing: 0.12em;
@@ -583,7 +559,7 @@ body::before {
   .practice-grid { grid-template-columns: 2fr minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr); }
   .practice-item {
     padding: 36px 28px 36px 0;
-    border-right: 1px solid #1e2128;
+    border-right: 1px solid #3a342a;
     min-height: 240px;
     gap: 0;
     justify-content: space-between;
@@ -740,21 +716,21 @@ footer { background: var(--ink); color: var(--ink-mute); padding: 50px 20px 30px
 .footer-brand { font-family: 'Fraunces', serif; font-size: 24px; color: var(--paper); margin-bottom: 8px; font-weight: 500; }
 .footer-tag { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-light); }
 .footer-col h4 { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 14px; font-weight: 500; }
-.footer-col p, .footer-col a { font-size: 14px; line-height: 1.7; color: #96958c; text-decoration: none; display: block; }
+.footer-col p, .footer-col a { font-size: 14px; line-height: 1.7; color: #9c9583; text-decoration: none; display: block; }
 .footer-col a:hover { color: var(--paper); }
 .footer-bottom {
   max-width: 1400px;
   margin: 0 auto;
   padding-top: 24px;
-  border-top: 1px solid #1e2128;
+  border-top: 1px solid #3a342a;
   display: flex;
   flex-direction: column;
   font-size: 11px;
-  color: #5e5f5c;
+  color: #6b6557;
   letter-spacing: 0.04em;
   gap: 8px;
 }
-.footer-disclaimer { max-width: 1400px; margin: 20px auto 0; font-size: 11px; color: #5e5f5c; line-height: 1.65; }
+.footer-disclaimer { max-width: 1400px; margin: 20px auto 0; font-size: 11px; color: #6b6557; line-height: 1.65; }
 
 @media (min-width: 900px) {
   footer { padding: 70px 48px 40px; }
