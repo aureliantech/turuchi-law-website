@@ -790,3 +790,8 @@ footer { background: var(--ink); color: var(--ink-mute); padding: 50px 20px 30px
     padding-bottom: 8px !important;
   }
 }
+
+/* Mobile: show only the wordmark in the header (hide the practice-area subtext) */
+@media (max-width: 899px) {
+  .nav-inner .nav-brand-tag { display: none !important; }
+}
