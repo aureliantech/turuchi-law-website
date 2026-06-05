@@ -767,3 +767,26 @@ footer { background: var(--ink); color: var(--ink-mute); padding: 50px 20px 30px
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 .reveal.in { opacity: 1; transform: translateY(0); }
+
+/* ─────────────────────────────────────────────────────────────
+   Mobile usability — larger tap targets (≤899px / touch).
+   Scoped to mobile only; desktop is unchanged.
+   ───────────────────────────────────────────────────────────── */
+@media (max-width: 899px) {
+  /* Review filter pills → comfortable ≥44px tap height */
+  .rv-filter-btn {
+    min-height: 44px !important;
+    padding-top: 11px !important;
+    padding-bottom: 11px !important;
+  }
+  /* Header call button, where shown */
+  .nav-cta { min-height: 44px !important; }
+  /* Secondary action links → bigger text + larger hit area */
+  .qa-v3-permission-link,
+  .ct-office-directions,
+  .home-hero-secondary {
+    font-size: 15px !important;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+  }
+}
